@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<ProveedorBE xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ID>1042</ID>
+  <CUIT>3398703498</CUIT>
+  <Nombre>Los Mirasoles</Nombre>
+  <Ciudad>
+    <ID>0</ID>
+    <Nombre>Acheral</Nombre>
+    <CP>-</CP>
+    <Provincia>
+      <ID>0</ID>
+      <Nombre>3</Nombre>
+    </Provincia>
+  </Ciudad>
+  <Provincia>
+    <ID>0</ID>
+    <Nombre>Catamarca</Nombre>
+  </Provincia>
+  <Pais>
+    <ID>0</ID>
+    <NombrePais>Argentina</NombrePais>
+  </Pais>
+  <Telefono>(099)3433-5566</Telefono>
+  <Celular>(099)78789966</Celular>
+  <CorreoElectronico>losmirasolessa@yahoo.com.ar</CorreoElectronico>
+</ProveedorBE>

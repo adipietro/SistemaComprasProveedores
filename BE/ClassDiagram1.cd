@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BE.ID" Collapsed="true">
+    <Position X="15.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ID.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.Diccionario" Collapsed="true">
+    <Position X="32.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAABAAAA=</HashCode>
+      <FileName>Multi-idioma\Diccionario.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.IdiomaBE" Collapsed="true">
+    <Position X="34" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAEABAAAA=</HashCode>
+      <FileName>Multi-idioma\IdiomaBE.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.AreaBE">
+    <Position X="18.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Negocio\AreaBE.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.CategoríaProductoBE">
+    <Position X="25.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Negocio\CategoríaProductoBE.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.DetalleCompra">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Negocio\DetalleCompra.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.EvaluaciónProveedorBE">
+    <Position X="5" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAEgQAEBAAAAAAEAAAAAAABAAAAAAQAAAAAgAAAAAAA=</HashCode>
+      <FileName>Negocio\EvaluaciónProveedorBE.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.OrdenCompraBE">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAgAAAAAAAAAEAAAEAAAABAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Negocio\OrdenCompraBE.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.Persona">
+    <Position X="20.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Negocio\Persona.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.ProductoBE">
+    <Position X="27.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAABgAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Negocio\ProductoBE.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.ProductoDetalleBE">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAgAAAEQAAAAAARAAIAAAAAAAAAAgAAAAA=</HashCode>
+      <FileName>Negocio\ProductoDetalleBE.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.ProveedorBE">
+    <Position X="7.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAEACAAgAgACAQEAAAAAhAAAggAAAA=</HashCode>
+      <FileName>Negocio\ProveedorBE.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.RegistroCompraBE">
+    <Position X="16.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAAEAAAAAAAAAABAAABAAAAAAAAACAAACAAAAAAA=</HashCode>
+      <FileName>Negocio\RegistroCompraBE.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.Bitacora">
+    <Position X="23" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAQAAAAAAAAAAAAAAAAAAAAQAAAAAEAAAAAA=</HashCode>
+      <FileName>Seguridad\Bitacora.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.GrupoPatenteBE">
+    <Position X="9.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAACAAAAAAAAAAAABAIAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Seguridad\GrupoPatenteBE.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.PatenteAbsBE">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAACEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Seguridad\PatenteAbsBE.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.PatenteBE">
+    <Position X="11.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAACAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>Seguridad\PatenteBE.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.UsuarioBE">
+    <Position X="20.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEEAAACAAAAAAAAAAwAAAAAAAAAAAA=</HashCode>
+      <FileName>Seguridad\UsuarioBE.vb</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BE.My.MySettings" Collapsed="true">
+    <Position X="32.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Module Name="BE.My.Resources.Resources" Collapsed="true">
+    <Position X="34" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Module Name="BE.My.MySettingsProperty" Collapsed="true">
+    <Position X="32.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Module>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
