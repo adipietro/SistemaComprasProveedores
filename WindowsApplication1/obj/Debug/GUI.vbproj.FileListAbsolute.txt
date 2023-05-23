@@ -171,3 +171,7 @@ C:\Users\Sebaahs\Desktop\ComprasProveedoresII\WindowsApplication1\bin\Debug\BLL.
 C:\Users\Sebaahs\Desktop\ComprasProveedoresII\WindowsApplication1\bin\Debug\BLL.xml
 C:\Users\Sebaahs\Desktop\ComprasProveedoresII\WindowsApplication1\bin\Debug\DAL.pdb
 C:\Users\Sebaahs\Desktop\ComprasProveedoresII\WindowsApplication1\bin\Debug\DAL.xml
+C:\Users\Sebaahs\Desktop\Any tiene que aprobar\SistemaComprasProveedores\WindowsApplication1\bin\Debug\WindowsApplication1.exe.config
+C:\Users\Sebaahs\Desktop\Any tiene que aprobar\SistemaComprasProveedores\WindowsApplication1\obj\Debug\WindowsApplication1.exe
+C:\Users\Sebaahs\Desktop\Any tiene que aprobar\SistemaComprasProveedores\WindowsApplication1\obj\Debug\WindowsApplication1.xml
+C:\Users\Sebaahs\Desktop\Any tiene que aprobar\SistemaComprasProveedores\WindowsApplication1\obj\Debug\WindowsApplication1.pdb
