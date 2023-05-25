@@ -1,14 +1,12 @@
-﻿Imports System.Data
-Imports System.Data.SqlClient
-Imports System.Data.Common
-Imports System.Data.Odbc
+﻿using System.Data.SqlClient;
+using System.Data.Common;
 
 
-Public MustInherit Class ADOfactory
+public abstract class ADOfactory
+{
+    public abstract SqlConnection CrearConexion();
 
-    Public MustOverride Function CrearConexion() As SqlConnection
-
-    Public MustOverride Function CrearComando(pconexion As DbConnection, pcommand As String) As DbCommand
-    Public MustOverride Function CrearComando(pconexion As Common.DbConnection, pcommand As String, params As SqlParameter()) As Common.DbCommand
-
-End Class
+    public abstract DbCommand CrearComando(DbConnection pconexion, string pcommand);
+    public abstract System.Data.Common.DbCommand CrearComando(System.Data.Common.DbConnection pconexion, string pcommand, SqlParameter[] @params);
+}
+ 

@@ -1,171 +1,216 @@
-﻿
-Imports System.Data.SqlClient
-Imports System.Data.Common
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Security;
+using System.Text;
+using System.Threading.Tasks;
+using Microsoft.VisualBasic;
+using System.Data.SqlClient;
+using System.Data.Common;
+using System.Data;
 
-Public Class Conexion
-    Private Shared mConnection As SqlConnection
+public class Conexion
+{
+    private static SqlConnection mConnection;
 
-    Public Shared Function ExecuteDataSet(pcommand As String) As DataSet
+    public static DataSet ExecuteDataSet(string pcommand)
+    {
+        DataSet data = new DataSet();
+        SQLfactory mfactory = new SQLfactory();
 
-        Dim data As New DataSet
-        Dim mfactory As New SQLfactory
+        DbConnection cn = mfactory.CrearConexion;
+        DbCommand com = mfactory.CrearComando(cn, pcommand);
+        SqlDataAdapter madapter = new SqlDataAdapter(com);
 
-        Dim cn As DbConnection = mfactory.CrearConexion
-        Dim com As DbCommand = mfactory.CrearComando(cn, pcommand)
-        Dim madapter As New SqlDataAdapter(com)
+        try
+        {
+            cn.Open();
+            madapter.Fill(data);
+            return data;
+        }
+        catch (Exception ex)
+        {
+            Interaction.MsgBox("Error DataSet");
+            Interaction.MsgBox(ex.Message);
+            return null/* TODO Change to default(_) if this is not a reference type */;
+        }
+        finally
+        {
+            cn.Close();
+        }
+    }
+    public static DataSet ExecuteDataSet(string pcommand, SqlParameter[] sqlparams)
+    {
+        DataSet data = new DataSet();
+        SQLfactory mfactory = new SQLfactory();
 
-        Try
-            cn.Open()
-            madapter.Fill(data)
-            Return data
-        Catch ex As Exception
-            MsgBox("Error DataSet")
-            MsgBox(ex.Message)
-            Return Nothing
-        Finally
-            cn.Close()
-        End Try
+        DbConnection cn = mfactory.CrearConexion;
+        DbCommand com = mfactory.CrearComando(cn, pcommand, sqlparams);
 
-    End Function
-    Public Shared Function ExecuteDataSet(pcommand As String, sqlparams() As SqlParameter) As DataSet
-
-        Dim data As New DataSet
-        Dim mfactory As New SQLfactory
-
-        Dim cn As DbConnection = mfactory.CrearConexion
-        Dim com As DbCommand = mfactory.CrearComando(cn, pcommand, sqlparams)
-
-        Dim madapter As New SqlDataAdapter(com)
-
-
-        Try
-            cn.Open()
-            madapter.Fill(data)
-            Return data
-        Catch ex As Exception
-            MsgBox("Error DataSet")
-            MsgBox(ex.Message)
-            Return Nothing
-        Finally
-            cn.Close()
-            com.Parameters.Clear()
-        End Try
-
-    End Function
-
-
-    Public Shared Function ExecuteNonQuery(pcommand As String, params() As SqlParameter)
-        Dim mfactory As New SQLfactory
-
-        Dim cn As DbConnection = mfactory.CrearConexion
-        Dim com As DbCommand = mfactory.CrearComando(cn, pcommand, params)
-
-        Try
-            cn.Open()
-            com.ExecuteNonQuery()
-        Catch ex As Exception
-            MsgBox("Error NonQuery")
-            MsgBox(ex.Message)
-
-        End Try
-
-    End Function
-
-    Public Shared Sub ExecuteNonQuery(pcommand As String)
-        Dim mfactory As New SQLfactory
-
-        Dim cn As DbConnection = mfactory.CrearConexion
-        Dim com As DbCommand = mfactory.CrearComando(cn, pcommand)
-
-        Try
-            cn.Open()
-            com.ExecuteNonQuery()
-        Catch ex As Exception
-            MsgBox("Error NonQuery")
-            MsgBox(ex.Message)
-
-        End Try
-
-    End Sub
+        SqlDataAdapter madapter = new SqlDataAdapter(com);
 
 
-    Public Shared Function ExecuteReader(pCommandStr As String) As SqlDataReader
-        Dim mReader As SqlDataReader
-        Dim mfactory As New SQLfactory
+        try
+        {
+            cn.Open();
+            madapter.Fill(data);
+            return data;
+        }
+        catch (Exception ex)
+        {
+            Interaction.MsgBox("Error DataSet");
+            Interaction.MsgBox(ex.Message);
+            return null/* TODO Change to default(_) if this is not a reference type */;
+        }
+        finally
+        {
+            cn.Close();
+            com.Parameters.Clear();
+        }
+    }
 
-        Try
-            Dim mConnection As DbConnection = mfactory.CrearConexion
-            Dim mCommand As DbCommand = mfactory.CrearComando(mConnection, pCommandStr)
 
-            mConnection.Open()
-            mReader = mCommand.ExecuteReader
+    public static void ExecuteNonQuery(string pcommand, SqlParameter[] @params)
+    {
+        SQLfactory mfactory = new SQLfactory();
 
-            Return mReader
-        Catch ex As Exception
-            MsgBox("Error - Reader - BD")
-            MsgBox(ex.Message)
-            Return Nothing
-        Finally
-            mReader.Close()
-            mConnection.Close()
-            mConnection.Dispose()
-        End Try
-    End Function
-    Public Shared Function ExecuteScalar(pCommandStr As String, params() As SqlParameter) As Integer
-        Dim mfactory As New SQLfactory
-        Try
-            Dim mConnection As DbConnection = mfactory.CrearConexion
-            Dim mCommand As DbCommand = mfactory.CrearComando(mConnection, pCommandStr, params)
+        DbConnection cn = mfactory.CrearConexion;
+        DbCommand com = mfactory.CrearComando(cn, pcommand, @params);
 
-            mConnection.Open()
-            Return mCommand.ExecuteScalar
-        Catch ex As Exception
-            MsgBox("Error - Scalar - BD")
-            MsgBox(ex.Message)
-            Return Nothing
-        Finally
-            'mConnection.Dispose()
-            'mConnection.Close()
-        End Try
-    End Function
+        try
+        {
+            cn.Open();
+            com.ExecuteNonQuery();
+        }
+        catch (Exception ex)
+        {
+            Interaction.MsgBox("Error NonQuery");
+            Interaction.MsgBox(ex.Message);
+        }
+    }
 
-    Public Shared Function ExecuteScalar(pCommandStr As String) As Integer
-        Dim mfactory As New SQLfactory
-        Try
-            Dim mConnection As DbConnection = mfactory.CrearConexion
-            Dim mCommand As DbCommand = mfactory.CrearComando(mConnection, pCommandStr)
+    public static void ExecuteNonQuery(string pcommand)
+    {
+        SQLfactory mfactory = new SQLfactory();
 
-            mConnection.Open()
-            Return mCommand.ExecuteScalar
-        Catch ex As Exception
-            MsgBox("Error - Scalar - BD")
-            MsgBox(ex.Message)
-            Return Nothing
-        Finally
-            'mConnection.Dispose()
-            'mConnection.Close()
-        End Try
-    End Function
+        DbConnection cn = mfactory.CrearConexion;
+        DbCommand com = mfactory.CrearComando(cn, pcommand);
 
-    Public Shared Function UltimoID(pTabla As String) As Integer
-        Dim mID As Integer
-        Dim mfactory As New SQLfactory
+        try
+        {
+            cn.Open();
+            com.ExecuteNonQuery();
+        }
+        catch (Exception ex)
+        {
+            Interaction.MsgBox("Error NonQuery");
+            Interaction.MsgBox(ex.Message);
+        }
+    }
 
-        Try
-            Dim mConnection As DbConnection = mfactory.CrearConexion
-            Dim mCommand As New SqlCommand("SELECT ISNULL(MAX(" & pTabla.ToLower & "_id), 0) FROM " & pTabla, mConnection)
 
-            mConnection.Open()
-            mID = mCommand.ExecuteScalar
+    public static SqlDataReader ExecuteReader(string pCommandStr)
+    {
+        SqlDataReader mReader;
+        SQLfactory mfactory = new SQLfactory();
 
-            Return mID
-        Catch ex As Exception
-            MsgBox("Error - UltimoID - BD")
-            MsgBox(ex.Message)
-            Return Nothing
-        Finally
-            mConnection.Close()
-            mConnection.Dispose()
-        End Try
-    End Function
-End Class
+        try
+        {
+            DbConnection mConnection = mfactory.CrearConexion;
+            DbCommand mCommand = mfactory.CrearComando(mConnection, pCommandStr);
+
+            mConnection.Open();
+            mReader = mCommand.ExecuteReader();
+
+            return mReader;
+        }
+        catch (Exception ex)
+        {
+            Interaction.MsgBox("Error - Reader - BD");
+            Interaction.MsgBox(ex.Message);
+            return null;
+        }
+        finally
+        {
+            mReader.Close();
+            mConnection.Close();
+            mConnection.Dispose();
+        }
+    }
+    public static int ExecuteScalar(string pCommandStr, SqlParameter[] @params)
+    {
+        SQLfactory mfactory = new SQLfactory();
+        try
+        {
+            DbConnection mConnection = mfactory.CrearConexion;
+            DbCommand mCommand = mfactory.CrearComando(mConnection, pCommandStr, @params);
+
+            mConnection.Open();
+            return mCommand.ExecuteScalar();
+        }
+        catch (Exception ex)
+        {
+            Interaction.MsgBox("Error - Scalar - BD");
+            Interaction.MsgBox(ex.Message);
+            return default(Integer);
+        }
+        finally
+        {
+        }
+    }
+
+    public static int ExecuteScalar(string pCommandStr)
+    {
+        SQLfactory mfactory = new SQLfactory();
+        try
+        {
+            DbConnection mConnection = mfactory.CrearConexion;
+            DbCommand mCommand = mfactory.CrearComando(mConnection, pCommandStr);
+
+            mConnection.Open();
+            return mCommand.ExecuteScalar();
+        }
+        catch (Exception ex)
+        {
+            Interaction.MsgBox("Error - Scalar - BD");
+            Interaction.MsgBox(ex.Message);
+            return default(Integer);
+        }
+        finally
+        {
+        }
+    }
+
+    public static int UltimoID(string pTabla)
+    {
+        int mID;
+        SQLfactory mfactory = new SQLfactory();
+
+        try
+        {
+            DbConnection mConnection = mfactory.CrearConexion;
+            SqlCommand mCommand = new SqlCommand("SELECT ISNULL(MAX(" + pTabla.ToLower() + "_id), 0) FROM " + pTabla, mConnection);
+
+            mConnection.Open();
+            mID = mCommand.ExecuteScalar();
+
+            return mID;
+        }
+        catch (Exception ex)
+        {
+            Interaction.MsgBox("Error - UltimoID - BD");
+            Interaction.MsgBox(ex.Message);
+            return default(Integer);
+        }
+        finally
+        {
+            mConnection.Close();
+            mConnection.Dispose();
+        }
+    }
+}

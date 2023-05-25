@@ -1,9 +1,6 @@
-﻿Imports System.Data
+﻿
 Imports System.Data.SqlClient
-Imports System.Data.Common
-Imports System.Data.Odbc
-Imports System.Configuration
-Imports System.Linq
+
 
 Public Class SQLfactory
     Inherits ADOfactory

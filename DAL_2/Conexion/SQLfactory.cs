@@ -1,36 +1,42 @@
-﻿Imports System.Data
-Imports System.Data.SqlClient
-Imports System.Data.Common
-Imports System.Data.Odbc
-Imports System.Configuration
-Imports System.Linq
+﻿
+using static Azure.Core.HttpHeader;
+using System.Data;
 
-Public Class SQLfactory
-    Inherits ADOfactory
+public class SQLfactory : ADOfactory
+{
+    public override DbCommand CrearComando(DbConnection pconexion, string pcommand)
+    {
+        var mcom = pconexion.CreateCommand();
+        mcom.CommandText = pcommand;
+        mcom.CommandType = CommandType.Text;
 
-    Public Overrides Function CrearComando(pconexion As Common.DbConnection, pcommand As String) As Common.DbCommand
-        Dim mcom As New SqlCommand
-        mcom.Connection = pconexion
-        mcom.CommandText = pcommand
-        mcom.CommandType = CommandType.Text
+        return mcom;
+    }
 
-        Return mcom
+    public override System.Data.Common.DbCommand CrearComando(System.Data.Common.DbConnection pconexion, string pcommand, SqlParameter[] @params)
+    {
+        SqlCommand mcom = new SqlCommand();
+        mcom.Connection = pconexion;
+        mcom.CommandText = pcommand;
+        mcom.CommandType = CommandType.Text;
+        mcom.Parameters.AddRange(@params);
 
-    End Function
+        return mcom;
+    }
 
-    Public Overrides Function CrearComando(pconexion As Common.DbConnection, pcommand As String, params As SqlParameter()) As Common.DbCommand
-        Dim mcom As New SqlCommand
-        mcom.Connection = pconexion
-        mcom.CommandText = pcommand
-        mcom.CommandType = CommandType.Text
-        mcom.Parameters.AddRange(params)
+    public override DbCommand CrearComando(DbConnection pconexion, string pcommand, SqlParameter[] @params)
+    {
+        throw new NotImplementedException();
+    }
 
-        Return mcom
+    public override DbCommand CrearComando(DbConnection pconexion, string pcommand, SqlParameter[] @params)
+    {
+        throw new NotImplementedException();
+    }
 
-    End Function
-
-    Public Overrides Function CrearConexion() As SqlClient.SqlConnection
-        Dim cn As New SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("MiConexion").ConnectionString)
-        Return cn
-    End Function
-End Class
+    public override System.Data.SqlClient.SqlConnection CrearConexion()
+    {
+        SqlConnection cn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("MiConexion").ConnectionString);
+        return cn;
+    }
+}

@@ -15,9 +15,9 @@ using System.Windows.Forms;
 
 public class GrupoPatenteBE : PatenteAbsBE
 {
-    private HashSet<BE.PatenteAbsBE> setPatentes = new HashSet<BE.PatenteAbsBE>();
+    private HashSet<PatenteAbsBE> setPatentes = new HashSet<PatenteAbsBE>();
 
-    public HashSet<BE.PatenteAbsBE> Patentes
+    public HashSet<PatenteAbsBE> Patentes
     {
         get
         {
