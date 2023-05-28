@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "d47/1Se8wm26q5fnhOn1m4KoLjU8w+jf0y1Jms+u8jSmE9RN5hDlSM4qVDlrdGVU4Tng5b+MnGgH+EPcqT/4kw==",
+  "dgSpecHash": "OOGIbZz+eHdclavLhCPrlfH+0NNMNbBNsQh/X2lywh6bs5cmweU53HfWMYh9LbYgvonlZBCkvRWREXOeU5mvLw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Sebaahs\\Desktop\\Any tiene que aprobar\\SistemaComprasProveedores\\DAL_2\\DAL_2.csproj",
+  "projectFilePath": "C:\\Users\\Sebaahs\\OneDrive\\Escritorio\\Any tiene que aprobar\\SistemaComprasProveedores\\DAL_2\\DAL_2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Sebaahs\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\Sebaahs\\.nuget\\packages\\azure.identity\\1.7.0\\azure.identity.1.7.0.nupkg.sha512",

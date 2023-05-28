@@ -8,7 +8,41 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Negocio\AreaDAL.vb" />
+    <None Remove="Negocio\CategoriaProductoDAL.vb" />
+    <None Remove="Negocio\CiudadDAL.vb" />
+    <None Remove="Negocio\EmpleadoDAL.vb" />
+    <None Remove="Negocio\EvaluacionDAL.vb" />
+    <None Remove="Negocio\OrdenCompraDAL.vb" />
+    <None Remove="Negocio\PaisDAL.vb" />
+    <None Remove="Negocio\ProductoDAL.vb" />
+    <None Remove="Negocio\ProductoDetalleDAL.vb" />
+    <None Remove="Negocio\ProveedorDAL.vb" />
+    <None Remove="Negocio\ProvinciaDAL.vb" />
+    <None Remove="Negocio\RegistroCompraDAL.vb" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Negocio\AreaDAL.vb" />
+    <Compile Include="Negocio\CategoriaProductoDAL.vb" />
+    <Compile Include="Negocio\CiudadDAL.vb" />
+    <Compile Include="Negocio\EmpleadoDAL.vb" />
+    <Compile Include="Negocio\EvaluacionDAL.vb" />
+    <Compile Include="Negocio\OrdenCompraDAL.vb" />
+    <Compile Include="Negocio\PaisDAL.vb" />
+    <Compile Include="Negocio\ProductoDAL.vb" />
+    <Compile Include="Negocio\ProductoDetalleDAL.vb" />
+    <Compile Include="Negocio\ProveedorDAL.vb" />
+    <Compile Include="Negocio\ProvinciaDAL.vb" />
+    <Compile Include="Negocio\RegistroCompraDAL.vb" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BE_2\BE_2.csproj" />
   </ItemGroup>
 
 </Project>

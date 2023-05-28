@@ -1,10 +1,9 @@
-﻿
-using static Azure.Core.HttpHeader;
-using System.Data;
+﻿using System.Data;
+using Microsoft.Data.SqlClient;
 
 public class SQLfactory : ADOfactory
 {
-    public override DbCommand CrearComando(DbConnection pconexion, string pcommand)
+    public override SqlCommand CrearComando(SqlConnection pconexion, string pcommand)
     {
         var mcom = pconexion.CreateCommand();
         mcom.CommandText = pcommand;
@@ -13,7 +12,7 @@ public class SQLfactory : ADOfactory
         return mcom;
     }
 
-    public override System.Data.Common.DbCommand CrearComando(System.Data.Common.DbConnection pconexion, string pcommand, SqlParameter[] @params)
+    public override SqlCommand CrearComando(SqlConnection pconexion, string pcommand, SqlParameter[] @params)
     {
         SqlCommand mcom = new SqlCommand();
         mcom.Connection = pconexion;
@@ -24,19 +23,9 @@ public class SQLfactory : ADOfactory
         return mcom;
     }
 
-    public override DbCommand CrearComando(DbConnection pconexion, string pcommand, SqlParameter[] @params)
+    public override SqlConnection CrearConexion()
     {
-        throw new NotImplementedException();
-    }
-
-    public override DbCommand CrearComando(DbConnection pconexion, string pcommand, SqlParameter[] @params)
-    {
-        throw new NotImplementedException();
-    }
-
-    public override System.Data.SqlClient.SqlConnection CrearConexion()
-    {
-        SqlConnection cn = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings("MiConexion").ConnectionString);
+        SqlConnection cn = new SqlConnection("Server=localhost\\SQLEXPRESS;Database=master;Trusted_Connection=True;");
         return cn;
     }
 }

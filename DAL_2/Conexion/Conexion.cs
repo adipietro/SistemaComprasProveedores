@@ -1,30 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
-using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Runtime.CompilerServices;
-using System.Security;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.VisualBasic;
-using System.Data.SqlClient;
+﻿using Microsoft.VisualBasic;
 using System.Data.Common;
 using System.Data;
+using Microsoft.Data.SqlClient;
+using System.Windows.Input;
 
 public class Conexion
 {
-    private static SqlConnection mConnection;
+    private static SqlConnection? mConnection = null;
 
     public static DataSet ExecuteDataSet(string pcommand)
     {
         DataSet data = new DataSet();
         SQLfactory mfactory = new SQLfactory();
 
-        DbConnection cn = mfactory.CrearConexion;
-        DbCommand com = mfactory.CrearComando(cn, pcommand);
+        SqlConnection cn = mfactory.CrearConexion();
+        SqlCommand com = mfactory.CrearComando(cn, pcommand);
         SqlDataAdapter madapter = new SqlDataAdapter(com);
 
         try
@@ -49,8 +39,8 @@ public class Conexion
         DataSet data = new DataSet();
         SQLfactory mfactory = new SQLfactory();
 
-        DbConnection cn = mfactory.CrearConexion;
-        DbCommand com = mfactory.CrearComando(cn, pcommand, sqlparams);
+        SqlConnection cn = mfactory.CrearConexion();
+        SqlCommand com = mfactory.CrearComando(cn, pcommand, sqlparams);
 
         SqlDataAdapter madapter = new SqlDataAdapter(com);
 
@@ -79,8 +69,8 @@ public class Conexion
     {
         SQLfactory mfactory = new SQLfactory();
 
-        DbConnection cn = mfactory.CrearConexion;
-        DbCommand com = mfactory.CrearComando(cn, pcommand, @params);
+        SqlConnection cn = mfactory.CrearConexion();
+        SqlCommand com = mfactory.CrearComando(cn, pcommand, @params);
 
         try
         {
@@ -98,8 +88,8 @@ public class Conexion
     {
         SQLfactory mfactory = new SQLfactory();
 
-        DbConnection cn = mfactory.CrearConexion;
-        DbCommand com = mfactory.CrearComando(cn, pcommand);
+        SqlConnection cn = mfactory.CrearConexion();
+        SqlCommand com = mfactory.CrearComando(cn, pcommand);
 
         try
         {
@@ -116,13 +106,13 @@ public class Conexion
 
     public static SqlDataReader ExecuteReader(string pCommandStr)
     {
-        SqlDataReader mReader;
+        SqlDataReader? mReader = null;
         SQLfactory mfactory = new SQLfactory();
 
         try
         {
-            DbConnection mConnection = mfactory.CrearConexion;
-            DbCommand mCommand = mfactory.CrearComando(mConnection, pCommandStr);
+            SqlConnection mConnection = mfactory.CrearConexion();
+            SqlCommand mCommand = mfactory.CrearComando(mConnection, pCommandStr);
 
             mConnection.Open();
             mReader = mCommand.ExecuteReader();
@@ -137,18 +127,18 @@ public class Conexion
         }
         finally
         {
-            mReader.Close();
-            mConnection.Close();
-            mConnection.Dispose();
+            mReader?.Close();
+            mConnection?.Close();
+            mConnection?.Dispose();
         }
     }
-    public static int ExecuteScalar(string pCommandStr, SqlParameter[] @params)
+    public static object ExecuteScalar(string pCommandStr, SqlParameter[] @params)
     {
         SQLfactory mfactory = new SQLfactory();
         try
         {
-            DbConnection mConnection = mfactory.CrearConexion;
-            DbCommand mCommand = mfactory.CrearComando(mConnection, pCommandStr, @params);
+            SqlConnection mConnection = mfactory.CrearConexion();
+            SqlCommand mCommand = mfactory.CrearComando(mConnection, pCommandStr, @params);
 
             mConnection.Open();
             return mCommand.ExecuteScalar();
@@ -157,20 +147,18 @@ public class Conexion
         {
             Interaction.MsgBox("Error - Scalar - BD");
             Interaction.MsgBox(ex.Message);
-            return default(Integer);
-        }
-        finally
-        {
+            return null;
         }
     }
 
-    public static int ExecuteScalar(string pCommandStr)
+    public static object ExecuteScalar(string pCommandStr)
     {
         SQLfactory mfactory = new SQLfactory();
         try
         {
-            DbConnection mConnection = mfactory.CrearConexion;
-            DbCommand mCommand = mfactory.CrearComando(mConnection, pCommandStr);
+
+            SqlConnection mConnection= mfactory.CrearConexion();
+            SqlCommand mCommand = mfactory.CrearComando(mConnection, pCommandStr);
 
             mConnection.Open();
             return mCommand.ExecuteScalar();
@@ -179,21 +167,21 @@ public class Conexion
         {
             Interaction.MsgBox("Error - Scalar - BD");
             Interaction.MsgBox(ex.Message);
-            return default(Integer);
+            return null;
         }
         finally
         {
         }
     }
 
-    public static int UltimoID(string pTabla)
+    public static object UltimoID(string pTabla)
     {
-        int mID;
+        object mID;
         SQLfactory mfactory = new SQLfactory();
 
         try
         {
-            DbConnection mConnection = mfactory.CrearConexion;
+            SqlConnection mConnection = mfactory.CrearConexion();
             SqlCommand mCommand = new SqlCommand("SELECT ISNULL(MAX(" + pTabla.ToLower() + "_id), 0) FROM " + pTabla, mConnection);
 
             mConnection.Open();
@@ -205,12 +193,12 @@ public class Conexion
         {
             Interaction.MsgBox("Error - UltimoID - BD");
             Interaction.MsgBox(ex.Message);
-            return default(Integer);
+            return null;
         }
         finally
         {
-            mConnection.Close();
-            mConnection.Dispose();
+            mConnection?.Close();
+            mConnection?.Dispose();
         }
     }
 }

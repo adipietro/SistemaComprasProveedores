@@ -711,6 +711,19 @@
             "rid": "win"
           }
         }
+      },
+      "BE_2/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/BE_2.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BE_2.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
       }
     }
   },
@@ -1995,10 +2008,16 @@
         "system.windows.extensions.nuspec",
         "useSharedDesignerContext.txt"
       ]
+    },
+    "BE_2/1.0.0": {
+      "type": "project",
+      "path": "../BE_2/BE_2.csproj",
+      "msbuildProject": "../BE_2/BE_2.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
+      "BE_2 >= 1.0.0",
       "Microsoft.Data.SqlClient >= 5.1.1"
     ]
   },
@@ -2009,11 +2028,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sebaahs\\Desktop\\Any tiene que aprobar\\SistemaComprasProveedores\\DAL_2\\DAL_2.csproj",
+      "projectUniqueName": "C:\\Users\\Sebaahs\\OneDrive\\Escritorio\\Any tiene que aprobar\\SistemaComprasProveedores\\DAL_2\\DAL_2.csproj",
       "projectName": "DAL_2",
-      "projectPath": "C:\\Users\\Sebaahs\\Desktop\\Any tiene que aprobar\\SistemaComprasProveedores\\DAL_2\\DAL_2.csproj",
+      "projectPath": "C:\\Users\\Sebaahs\\OneDrive\\Escritorio\\Any tiene que aprobar\\SistemaComprasProveedores\\DAL_2\\DAL_2.csproj",
       "packagesPath": "C:\\Users\\Sebaahs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sebaahs\\Desktop\\Any tiene que aprobar\\SistemaComprasProveedores\\DAL_2\\obj\\",
+      "outputPath": "C:\\Users\\Sebaahs\\OneDrive\\Escritorio\\Any tiene que aprobar\\SistemaComprasProveedores\\DAL_2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -2033,7 +2052,11 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Sebaahs\\OneDrive\\Escritorio\\Any tiene que aprobar\\SistemaComprasProveedores\\BE_2\\BE_2.csproj": {
+              "projectPath": "C:\\Users\\Sebaahs\\OneDrive\\Escritorio\\Any tiene que aprobar\\SistemaComprasProveedores\\BE_2\\BE_2.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

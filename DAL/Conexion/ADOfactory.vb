@@ -11,4 +11,7 @@ Public MustInherit Class ADOfactory
     Public MustOverride Function CrearComando(pconexion As DbConnection, pcommand As String) As DbCommand
     Public MustOverride Function CrearComando(pconexion As Common.DbConnection, pcommand As String, params As SqlParameter()) As Common.DbCommand
 
+    Private newPropertyValue As String
+
+
 End Class

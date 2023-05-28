@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Sebaahs\\Desktop\\Any tiene que aprobar\\SistemaComprasProveedores\\BE_2\\BE_2.csproj",
+      "projectUniqueName": "C:\\Users\\Sebaahs\\OneDrive\\Escritorio\\Any tiene que aprobar\\SistemaComprasProveedores\\BE_2\\BE_2.csproj",
       "projectName": "BE_2",
-      "projectPath": "C:\\Users\\Sebaahs\\Desktop\\Any tiene que aprobar\\SistemaComprasProveedores\\BE_2\\BE_2.csproj",
+      "projectPath": "C:\\Users\\Sebaahs\\OneDrive\\Escritorio\\Any tiene que aprobar\\SistemaComprasProveedores\\BE_2\\BE_2.csproj",
       "packagesPath": "C:\\Users\\Sebaahs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Sebaahs\\Desktop\\Any tiene que aprobar\\SistemaComprasProveedores\\BE_2\\obj\\",
+      "outputPath": "C:\\Users\\Sebaahs\\OneDrive\\Escritorio\\Any tiene que aprobar\\SistemaComprasProveedores\\BE_2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

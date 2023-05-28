@@ -46,3 +46,17 @@ C:\Users\Sebaahs\Desktop\ComprasProveedoresII\DAL\obj\Debug\DAL.vbproj.GenerateR
 C:\Users\Sebaahs\Desktop\ComprasProveedoresII\DAL\obj\Debug\DAL.dll
 C:\Users\Sebaahs\Desktop\ComprasProveedoresII\DAL\obj\Debug\DAL.xml
 C:\Users\Sebaahs\Desktop\ComprasProveedoresII\DAL\obj\Debug\DAL.pdb
+C:\Users\Sebaahs\OneDrive\Escritorio\Any tiene que aprobar\SistemaComprasProveedores\DAL\bin\Debug\DAL.dll
+C:\Users\Sebaahs\OneDrive\Escritorio\Any tiene que aprobar\SistemaComprasProveedores\DAL\bin\Debug\DAL.pdb
+C:\Users\Sebaahs\OneDrive\Escritorio\Any tiene que aprobar\SistemaComprasProveedores\DAL\bin\Debug\DAL.xml
+C:\Users\Sebaahs\OneDrive\Escritorio\Any tiene que aprobar\SistemaComprasProveedores\DAL\bin\Debug\BE.dll
+C:\Users\Sebaahs\OneDrive\Escritorio\Any tiene que aprobar\SistemaComprasProveedores\DAL\bin\Debug\BE.pdb
+C:\Users\Sebaahs\OneDrive\Escritorio\Any tiene que aprobar\SistemaComprasProveedores\DAL\bin\Debug\BE.xml
+C:\Users\Sebaahs\OneDrive\Escritorio\Any tiene que aprobar\SistemaComprasProveedores\DAL\obj\Debug\DAL.vbproj.AssemblyReference.cache
+C:\Users\Sebaahs\OneDrive\Escritorio\Any tiene que aprobar\SistemaComprasProveedores\DAL\obj\Debug\DAL.Resources.resources
+C:\Users\Sebaahs\OneDrive\Escritorio\Any tiene que aprobar\SistemaComprasProveedores\DAL\obj\Debug\DAL.vbproj.GenerateResource.cache
+C:\Users\Sebaahs\OneDrive\Escritorio\Any tiene que aprobar\SistemaComprasProveedores\DAL\obj\Debug\DAL.vbproj.CoreCompileInputs.cache
+C:\Users\Sebaahs\OneDrive\Escritorio\Any tiene que aprobar\SistemaComprasProveedores\DAL\obj\Debug\DAL.vbproj.CopyComplete
+C:\Users\Sebaahs\OneDrive\Escritorio\Any tiene que aprobar\SistemaComprasProveedores\DAL\obj\Debug\DAL.dll
+C:\Users\Sebaahs\OneDrive\Escritorio\Any tiene que aprobar\SistemaComprasProveedores\DAL\obj\Debug\DAL.xml
+C:\Users\Sebaahs\OneDrive\Escritorio\Any tiene que aprobar\SistemaComprasProveedores\DAL\obj\Debug\DAL.pdb
